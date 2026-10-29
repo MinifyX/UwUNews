@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head><title>Export</title></head>
+  <body>
+    <outline text="Lose" type="rss" xmlUrl="https://a.example.com/feed" htmlUrl="https://a.example.com/"/>
+    <outline text="Tech">
+      <outline text="B" type="rss" xmlUrl="https://b.example.com/rss.xml"/>
+      <outline text="Tiefer">
+        <outline title="C &amp; D" type="rss" xmlUrl="https://c.example.com/atom.xml"/>
+      </outline>
+    </outline>
+    <outline text="Leer"></outline>
+  </body>
+</opml>

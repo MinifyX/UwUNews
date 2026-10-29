@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+  <title>Beispiel &amp; News</title>
+  <link>https://news.example.com/</link>
+  <item>
+    <title>Älterer Artikel</title>
+    <link>/2026/alt</link>
+    <guid>alt-1</guid>
+    <pubDate>Mon, 26 Oct 2026 08:00:00 +0000</pubDate>
+    <description>&lt;p&gt;Kurz &lt;b&gt;gesagt&lt;/b&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title><![CDATA[Neuer <em>Artikel</em>]]></title>
+    <link>https://news.example.com/2026/neu</link>
+    <guid isPermaLink="false">neu-2</guid>
+    <pubDate>Wed, 28 Oct 2026 10:30:00 +0100</pubDate>
+    <author>redaktion@example.com (Redaktion)</author>
+    <description>Teaser</description>
+    <content:encoded><![CDATA[<p>Volltext <img src="https://img.example.com/neu.jpg"> hier</p>]]></content:encoded>
+  </item>
+</channel>
+</rss>

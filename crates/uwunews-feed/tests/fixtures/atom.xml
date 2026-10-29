@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Ein Blog</title>
+  <link href="https://blog.example.org/" rel="alternate"/>
+  <link href="https://blog.example.org/atom.xml" rel="self"/>
+  <id>urn:uuid:blog</id>
+  <updated>2026-10-28T12:00:00Z</updated>
+  <entry>
+    <title>Atom-Eintrag</title>
+    <link href="https://blog.example.org/eintrag"/>
+    <id>urn:uuid:eintrag-1</id>
+    <updated>2026-10-28T12:00:00Z</updated>
+    <author><name>Nyu</name></author>
+    <summary type="html">&lt;p&gt;Zusammenfassung&lt;/p&gt;</summary>
+  </entry>
+</feed>

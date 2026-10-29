@@ -1,0 +1,62 @@
+name: UwUNews
+options:
+  bundleIdPrefix: app.uwunews
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: de
+configFiles:
+  Debug: Config/UwUNews.xcconfig
+  Release: Config/UwUNews.xcconfig
+settings:
+  base:
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+packages:
+  UwUNewsCore:
+    path: ../bindings/swift
+targets:
+  UwUNews:
+    type: application
+    platform: iOS
+    sources:
+      - path: UwUNews
+    dependencies:
+      - package: UwUNewsCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(UWUNEWS_BUNDLE_ID)
+        PRODUCT_NAME: UwUNews
+        PRODUCT_MODULE_NAME: UwUNewsApp
+        INFOPLIST_FILE: UwUNews/Resources/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: YES
+    info:
+      path: UwUNews/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: UwUNews
+        CFBundleDevelopmentRegion: de
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        ITSAppUsesNonExemptEncryption: false
+        LSRequiresIPhoneOS: true
+        UIAppFonts:
+          - UwUSans-wght.ttf
+        UILaunchScreen:
+          UIColorName: Canvas
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UIBackgroundModes:
+          - fetch
+          - processing
+        BGTaskSchedulerPermittedIdentifiers:
+          - app.uwunews.ios.refresh
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        CFBundleLocalizations:
+          - de
+          - en

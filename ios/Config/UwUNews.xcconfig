@@ -1,0 +1,22 @@
+// Settings of the UwUNews app. Local overrides (another team) go into
+// Config/UwUNews.local.xcconfig, which git ignores.
+
+DEVELOPMENT_TEAM = 7N8YX2CL7J
+UWUNEWS_BUNDLE_ID = app.uwunews.ios
+
+MARKETING_VERSION = 0.1.0
+CURRENT_PROJECT_VERSION = 1
+
+IPHONEOS_DEPLOYMENT_TARGET = 26.0
+SWIFT_VERSION = 6.0
+SWIFT_STRICT_CONCURRENCY = complete
+TARGETED_DEVICE_FAMILY = 1
+
+CODE_SIGN_STYLE = Automatic
+CODE_SIGN_IDENTITY = Apple Development
+CODE_SIGN_IDENTITY[sdk=iphonesimulator*] = -
+
+#include? "UwUNews.local.xcconfig"
+
+// The Rust core is built for Apple silicon simulators only.
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = x86_64

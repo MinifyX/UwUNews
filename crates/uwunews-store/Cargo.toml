@@ -1,0 +1,24 @@
+[package]
+name = "uwunews-store"
+description = "Local SQLite store for UwUNews: sources, collections, read and starred marks, the article cache, and sync state"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+uwunews-proto.workspace = true
+uwunews-vault.workspace = true
+
+base64.workspace = true
+parking_lot.workspace = true
+rand.workspace = true
+rusqlite.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+uuid.workspace = true
+zeroize.workspace = true

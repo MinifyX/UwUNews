@@ -1,0 +1,45 @@
+[package]
+name = "uwunews-sync"
+description = "Offline-first sync client for UwUNews: outbox, clocks, conflict resolution"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+uwunews-proto.workspace = true
+uwunews-store.workspace = true
+uwunews-vault.workspace = true
+zeroize.workspace = true
+
+parking_lot.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+uuid.workspace = true
+rustls = { version = "0.23.45", default-features = false, features = ["ring", "std", "logging", "tls12"] }
+x509-cert = "0.3.0"
+ed25519-dalek = "=3.0.0-rc.1"
+reqwest = { version = "0.13.5", default-features = false, features = ["blocking", "form", "json", "query", "rustls-no-provider"] }
+url = "2.5"
+base64.workspace = true
+sha2.workspace = true
+webpki-roots = "1.0.9"
+spake2 = "0.4"
+rand.workspace = true
+serde_json.workspace = true
+uwulock-core.workspace = true
+# The realtime channel of a UwULock Server. Only the handshake and the frames:
+# the TLS underneath is this crate's own rustls, as for every request.
+tungstenite = { version = "0.28", default-features = false, features = ["handshake"] }
+
+
+# The operating system's trust store next to the public roots, so a server
+# behind a company's or a home network's own CA can be reached too. Not on
+# mobile, where a server like that is reached by its pin.
+[target.'cfg(not(any(target_os = "ios", target_os = "android")))'.dependencies]
+rustls-native-certs = "0.8"
+
+[dev-dependencies]
+rcgen = { version = "0.14.10", default-features = false, features = ["crypto", "pem", "ring"] }

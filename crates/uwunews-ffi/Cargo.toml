@@ -1,0 +1,38 @@
+[package]
+name = "uwunews-ffi"
+description = "The engine the UwUNews apps talk to, exported with UniFFI"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+publish = false
+
+[lib]
+crate-type = ["lib", "cdylib", "staticlib"]
+name = "uwunews_ffi"
+
+[features]
+bindgen = ["uniffi/cli"]
+
+[dependencies]
+uwunews-feed.workspace = true
+uwunews-store.workspace = true
+uwunews-sync.workspace = true
+parking_lot.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+uniffi.workspace = true
+uuid.workspace = true
+
+[[bin]]
+name = "uniffi-bindgen"
+path = "src/bin/uniffi-bindgen.rs"
+required-features = ["bindgen"]
+
+[[test]]
+name = "integration"
+path = "tests/integration/main.rs"
+
+[dev-dependencies]
+uuid.workspace = true
